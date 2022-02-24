@@ -44,21 +44,7 @@ const SEARCH_CARD_TEMPLATE = `
 `;
 
 // test Access Token validation
-// test();
-getApiObject();
-
-function getApiObject() {
-  $.ajax({
-    type: "GET",
-    url: "http://mentor-program.co/mtr04group5/gz/twitchAPI/object.php",
-    success: function (resp) {
-      console.log("success!", resp);
-    },
-    error: function (err) {
-      console.log("api Error: n", err);
-    },
-  });
-}
+test();
 
 function test() {
   $.ajax({
