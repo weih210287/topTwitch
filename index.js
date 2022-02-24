@@ -103,7 +103,6 @@ function getTopGames() {
       "Client-Id": API.CLIENT_ID,
     },
     success: function (topGames) {
-      console.log(topGames);
       const games = topGames.data;
       addSidebar(games);
       replaceTitle(games[0].id, games[0].name);
@@ -130,7 +129,6 @@ function getTopStreams(gameId) {
       "Client-Id": API.CLIENT_ID,
     },
     success: function (resp) {
-      console.log(resp);
       const streams = resp.data;
       currentCursor = resp.pagination.cursor;
       for (let stream of streams) {
@@ -165,7 +163,6 @@ function getSearchChennals(searchQuery) {
       "Client-Id": API.CLIENT_ID,
     },
     success: function (resp) {
-      console.log(resp);
       const channels = resp.data;
       currentCursor = resp.pagination.cursor;
       for (let channel of channels) {
@@ -193,13 +190,11 @@ function getTopGamesLoadMore(gameId, cursor) {
       "Client-Id": API.CLIENT_ID,
     },
     success: function (resp) {
-      console.log(resp);
       const streams = resp.data;
       for (let stream of streams) {
         replaceCard(stream);
       }
       currentCursor = resp.pagination.cursor;
-      console.log(currentCursor);
     },
     error: function (err) {
       console.log("getTopGames Error: \n");
@@ -222,13 +217,11 @@ function getChannelsLoadMore(searchQuery, cursor) {
       "Client-Id": API.CLIENT_ID,
     },
     success: function (resp) {
-      console.log(resp);
       const streams = resp.data;
       for (let stream of streams) {
         replaceSearchCard(stream);
       }
       currentCursor = resp.pagination.cursor;
-      console.log(currentCursor);
     },
     error: function (err) {
       console.log("getChannels Error: \n");
@@ -315,15 +308,10 @@ $(".search-input").keydown((e) => {
 // click load more button to show more results
 $(".btn").click((e) => {
   let isSearch = e.target.id === "search" ? true : false;
-  console.log(isSearch);
   const gameId = $(".top").attr("id");
   if (isSearch) {
-    console.log("search");
-    console.log(gameId, currentCursor);
     getChannelsLoadMore(gameId, currentCursor);
   } else {
-    console.log("load");
-    console.log(gameId, currentCursor);
     getTopGamesLoadMore(gameId, currentCursor);
   }
 });
