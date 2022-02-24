@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="icon" href="./image/icon.png" />
+    <title>Top Twitch</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body id="top">
+    <nav>
+      <ul class="nav left">
+        <li class="website-title">
+          <a class="title" onClick="location.reload()">Top Twitch</a>
+          <a class="shadow">Top Twitch</a>
+        </li>
+        <li>
+          <input class="search-input" type="text" placeholder="type something..." for="search">
+          <input class="search-btn shine" type="submit" value="Search" name="search">
+        </li>
+      </ul>
+      <ul class="nav right">
+        <li class="categories shine">Top Games</li>
+      </ul>
+    </nav>
+
+    <main>
+      <aside></aside>
+      <div class="wrapper">
+        <div class="to-top-btn">
+          <a href="#top" class="arrow up"></a>
+        </div>
+        <div class="wrapper-title">
+          <h1 class="top" id="">Loading...</h1>
+          <h3 class="top-about">Top 20 streams of...</h3>
+        </div>
+        <div class="cards-wrapper">
+          <div class="cards"></div>
+          <p class="btn load-btn">Loading...</p>
+        </div>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+<!-- 至頂鍵 -->
+<!-- 漂浮 sidebar -->
